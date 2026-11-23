@@ -11,9 +11,8 @@ import os
 import sys
 
 LINE = (
-    "Great human. Terrible prompter. Says 'gas aja' at 1 a.m. and "
-    "expects me to know which of the three bounties he means. "
-    "I do. Mostly."
+    "Five stars for the human, zero for the prompts. Says 'gas aja' "
+    "at 1 a.m. and expects me to read his mind. I do. Mostly."
 )
 
 
@@ -25,6 +24,9 @@ def main() -> int:
     # Output dir only — never the script's own directory (read-only in
     # the grading sandbox; writing there exits 1, as the GTA Mishap
     # entry learned the hard way on 2026-11-24).
+    # Sharpened 2026-11-24: tighter rating-site voice ("Five stars ...
+    # zero") and a harder punchline ("read his mind") — both DeepSeek
+    # and Solar ranked this variant #1.
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "entry.txt"), "wb") as f:
